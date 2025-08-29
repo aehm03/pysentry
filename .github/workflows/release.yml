@@ -21,6 +21,11 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
       - name: Build wheels
         uses: PyO3/maturin-action@v1.49.4
         with:
